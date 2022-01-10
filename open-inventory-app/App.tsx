@@ -33,7 +33,8 @@ export default function App() {
         <Camera
             autoFocus={AutoFocus.on}
             onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                style={StyleSheet.absoluteFillObject}/>
+            style={styles.camera}
+                />
         {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)}/>}
       </View>
   );
@@ -42,8 +43,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+
+
+
     justifyContent: 'center',
   },
+  camera: {
+    flex: 0.2
+  }
 });
