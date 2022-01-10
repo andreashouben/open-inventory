@@ -32,6 +32,7 @@ export default function App() {
       <View style={styles.container}>
         <Camera
             autoFocus={AutoFocus.on}
+            focusDepth={1}
             onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
             style={styles.camera}
                 />
