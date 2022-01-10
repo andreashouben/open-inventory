@@ -1,6 +1,7 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {useEffect, useState} from "react";
 import {BarCodeScanningResult, Camera} from "expo-camera";
+import {AutoFocus} from "expo-camera/build/Camera.types";
 
 
 // noinspection JSUnusedGlobalSymbols
@@ -29,7 +30,9 @@ export default function App() {
 
   return (
       <View style={styles.container}>
-        <Camera onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+        <Camera
+            autoFocus={AutoFocus.on}
+            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
                 style={StyleSheet.absoluteFillObject}/>
         {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)}/>}
       </View>
